@@ -19,4 +19,31 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  removeAt(position) {
+    if (this.head === null || position < 0) return null;
+
+    if (position === 0) {
+      const removedNode = this.head;
+      this.head = this.head.next;
+      return removedNode;
+    }
+
+    let currentNode = this.head;
+    let previousNode = null;
+    let currentIndex = 0;
+
+    while (currentNode !== null && currentIndex < position) {
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+
+    if (currentNode !== null) {
+      previousNode.next = currentNode.next;
+      return currentNode;
+    }
+
+    return null;
+  }
 }
