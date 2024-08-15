@@ -47,3 +47,4 @@ class LinkedList {
     return null;
   }
 }
+export default LinkedList;
