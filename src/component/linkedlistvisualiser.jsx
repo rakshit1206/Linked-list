@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LinkedList from "../LinkedList.js";
-// import "../LinkedListVisualizer.css";
+import "./linkedlistvisualiser.css";
 
 const LinkedListVisualizer = () => {
   const [list] = useState(new LinkedList());
