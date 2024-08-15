@@ -20,6 +20,24 @@ class LinkedList {
     }
   }
 
+  pop() {
+    if (this.head === null) return null;
+    if (this.head.next === null) {
+      const poppedNode = this.head;
+      this.head = null;
+      return poppedNode;
+    }
+
+    let currentNode = this.head;
+    while (currentNode.next && currentNode.next.next) {
+      currentNode = currentNode.next;
+    }
+
+    const poppedNode = currentNode.next;
+    currentNode.next = null;
+    return poppedNode;
+  }
+
   removeAt(position) {
     if (this.head === null || position < 0) return null;
 
@@ -69,6 +87,16 @@ class LinkedList {
       newNode.next = previousNode.next;
       previousNode.next = newNode;
     }
+  }
+
+  display() {
+    let currentNode = this.head;
+    let result = [];
+    while (currentNode !== null) {
+      result.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return result;
   }
 }
 export default LinkedList;
