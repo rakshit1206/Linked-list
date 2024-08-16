@@ -67,12 +67,18 @@ const LinkedListVisualizer = () => {
 
       <div id="linked-list">
         {listDisplay.map((value, index) => (
-          <span key={index} className="node">
-            {value}
+          <>
+            <span key={index} className="node">
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span>P=&gt; {index}</span>
+                <hr style={{ width: "100%" }} />
+                <span>V=&gt; {value}</span>
+              </div>
+            </span>
             {index < listDisplay.length - 1 && <span className="arrow">→</span>}
-          </span>
+          </>
         ))}
-        {listDisplay.length === 0 ? "null" : <span className="node">null</span>}
+        {listDisplay.length === 0 ? "null" : ""}
       </div>
     </div>
   );
