@@ -1,50 +1,58 @@
-# React + TypeScript + Vite
+# Linked List Visualization in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project provides a visualization of a Linked List data structure implemented in JavaScript. The project is built with React and allows users to interact with the Linked List through a simple web interface. Users can perform operations like prepending a node, inserting a node at a specific position, removing a node, and popping the last node from the list. The current state of the Linked List is displayed in real-time on the page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Prepend**: Adds a new node at the beginning of the linked list.
+- **Insert At**: Inserts a new node at a specified position in the linked list.
+- **Remove At**: Removes a node from a specified position in the linked list.
+- **Pop**: Removes the last node in the linked list.
+- **Real-time Visualization**: The linked list updates visually in real-time as operations are performed.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+To run this project locally, follow these steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the repository:**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   git clone https://github.com/rakshit1206/Linked-list
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. **Install dependencies:**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open the project in your browser:**
+
+   Once the server is running, you can view the project at `http://localhost:5173`.
+
+## Usage
+
+### User Interface
+
+- **Node Value Input**: Enter the value for the new node.
+- **Position Input**: (Optional) Specify the position at which to insert or remove a node. If left blank for `Insert At`, the node will be inserted at the start.
+- **Prepend**: Click this button to add a new node to the beginning of the list.
+- **Insert At**: Click this button to insert a node at the specified position.
+- **Remove At**: Click this button to remove a node at the specified position.
+- **Pop**: Click this button to remove the last node in the list.
+
+### Linked List Visualization
+
+The linked list is displayed in a horizontal row of nodes, each with its value. Arrows between nodes indicate the links. The list always ends with a `null` node, indicating the end of the linked list.
+
+## Linked List Implementation
+
+The linked list logic is implemented in the `LinkedList.js` file. It contains methods to manipulate the list, such as `prepend`, `insertAt`, `removeAt`, and `pop`.
